@@ -21,4 +21,4 @@ jobs:
           cp -r templates/* docs/ || true
           cp -r static/* docs/ || true
           cp -r data/* docs/ || true
-          echo "<h1>深职大校园生活指南</h1><p>网站正在维护中，请稍后访问</p>" > docs/index.html
+          echo "<h1>芸莘书院生活指南</h1><p>网站正在维护中，请稍后访问</p>" > docs/index.html
