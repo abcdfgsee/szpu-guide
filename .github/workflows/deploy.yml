@@ -1,0 +1,24 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install flask
+      - name: Create static site
+        run: |
+          mkdir -p docs
+          cp -r templates/* docs/ || true
+          cp -r static/* docs/ || true
+          cp -r data/* docs/ || true
+          echo "<h1>深职大校园生活指南</h1><p>网站正在维护中，请稍后访问</p>" > docs/index.html
